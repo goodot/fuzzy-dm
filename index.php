@@ -4,7 +4,12 @@ include "models.php";
 
 define("PLAYER", "player");
 $membership_function = new Trimf(160, 215, 240);
-$membership_function->call(177);
-$feature_height = new Feature("სიმაღლე", $membership_function);
-//$ginobili = new Item("Manu Ginobili", array($feature_height));
+
+//var_dump($membership_function);
+
+$feature = new Feature("სიმაღლე", $membership_function, 198);
+//var_dump($feature);
+$ginobili = new Item("Manu Ginobili", array($feature), new ArithmeticMean());
+//var_dump($ginobili);
+echo $ginobili->aggregate();
 //$player1 = new Item(PLAYER, )
