@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
         $features = array();
         $items = array();
-
+        try{
         foreach($features_json as $feature_json){
             $mem_function = NULL;
             if(array_key_exists("trimf", $feature_json)){
@@ -46,13 +46,22 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $results = $analyzer->analyze();
 
         $response = new SuccessResponse();
-        $response->status = Response::success_message;
-        $response->status_code = Response::success_code;
+        $response->status = ResponseConstants::success_message;
+        $response->status_code = ResponseConstants::success_code;
         $response->name = $name;
         $response->results = $results;
         $response->suggested_item = $analyzer->suggest_best();
 
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        }
+        catch(Exception $e){
+            $error_response = new ErrorResponse();
+            $error_response->status_code = ResponseConstants::not_json_error_code;
+            $error_response->status_code = ResponseConstants::not_json_error_message;
+            $error_response->error_message = $e->getMessage();
+
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        }
 
 
 
@@ -60,12 +69,18 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     }
     else{
-        //TODO return not_json response
-        echo "not json";
+        $error_response = new ErrorResponse();
+        $error_response->status_code = ResponseConstants::not_json_error_code;
+        $error_response->status_code = ResponseConstants::not_json_error_message;
+
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 
 }
 else{
-    //TODO return not_post response
-    echo "not post";
+    $error_response = new ErrorResponse();
+    $error_response->status_code = ResponseConstants::not_post_error_code;
+    $error_response->status_code = ResponseConstants::not_post_error_message;
+
+    echo json_encode($response, JSON_UNESCAPED_UNICODE);
 }
