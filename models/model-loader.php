@@ -2,6 +2,7 @@
 require_once("aggregation-functions.php");
 require_once("membership-functions.php");
 require_once("models.php");
+require_once("tools.php");
 
 //
 //class Aggregator
