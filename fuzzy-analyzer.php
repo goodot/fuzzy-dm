@@ -1,5 +1,6 @@
 <?php
 require "models/model-loader.php";
+header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $json = file_get_contents('php://input');
