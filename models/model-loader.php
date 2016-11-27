@@ -5,52 +5,6 @@ require_once("models.php");
 require_once("tools.php");
 require_once("response.php");
 
-//
-//class Aggregator
-//{
-//    public $item;
-//    public $features;
-//    public $feature_values;
-//    public $aggregation_function;
-//
-//
-//    function __construct($item, $features, $aggregation_function){
-//            if(!$this->item instanceof Item)
-//                throw new Exception("item should be Item");
-//
-//
-//        foreach($features as $feature){
-//            if(!$feature instanceof Feature)
-//                throw new Exception("feature should be Feature");
-//            if(count($features) != count($item->feature_values))
-//                throw new Exception("number of features and feature_values doesn't match");
-//
-//        }
-//
-//
-//        if(!$aggregation_function instanceof AggregationFunction)
-//            throw new Excepton("aggregation_function should be AggregationFunction");
-//
-//
-//        $this->item = $item;
-//        $this->features = $features;
-//        $this->feature_values = $item->feature_values;
-//        $this->aggregation_function = $aggregation_function;
-//    }
-//
-//
-//    function aggregate(){
-//        $feature_scores = array();
-//        $count_features = count($this->features);
-//
-//        for($i=0; $i<$count_features; $i++){
-//            array_push($feature_scores, $this->features[$i]->call_membership_function($this->feature_values[$i]));
-//        }
-//        return $this->aggregation_function->call($feature_scores);
-//    }
-//
-//}
-
 
 class Result
 {
@@ -63,6 +17,9 @@ class Analyzer
     public $features;
     public $items;
     public $aggregation_function;
+
+
+    private $results;
 
     function __construct($features, $items, $aggregation_function)
     {
@@ -94,7 +51,21 @@ class Analyzer
             $result->item_identifier = $item->identifier;
             array_push($results, $result);
         }
+        $this->results = $results;
         return $results;
+    }
+    function suggest_best(){
+        $results = $this->results;
+        if($results != NULL){
+            $best = $results[0];
+            foreach($results as $result){
+                if($result->score > $best->score)
+                    $best = $result;
+            }
+            return $best;
+        }
+        else
+            return NULL;
     }
     private function aggregate($item, $features, $aggregation_function)
     {
@@ -125,5 +96,7 @@ class Analyzer
 
     }
 }
+
+
 
 

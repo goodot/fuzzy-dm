@@ -45,7 +45,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $analyzer = new Analyzer($features, $items, $aggregation_function);
         $results = $analyzer->analyze();
 
-        echo json_encode($results, JSON_UNESCAPED_UNICODE);
+        $response = new SuccessResponse();
+        $response->status = Response::success_message;
+        $response->status_code = Response::success_code;
+        $response->name = $name;
+        $response->results = $results;
+        $response->suggested_item = $analyzer->suggest_best();
+
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
 
 
 
