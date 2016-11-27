@@ -4,56 +4,51 @@ class Feature
 {
     public $identifier;
     public $mem_function;
-    public $value;
 
 
-    function __construct($identifier, $mem_function, $value)
+    function __construct($identifier, $mem_function)
     {
         if ($mem_function instanceof MembershipFunction) {
             $this->identifier = $identifier;
             $this->mem_function = $mem_function;
-            $this->value = $value;
-        } else{
+        } else {
             throw new Exception("mem_functon should be MembershipFunction");
         }
     }
 
-    function call_membership_function()
+    function call_membership_function($value)
     {
-        return $this->mem_function->call($this->value);
+        return $this->mem_function->call($value);
     }
 }
 
 class Item
 {
     public $identifier;
-    public $features;
-    public $aggregation_function;
+    public $feature_values;
 
-    function __construct($identifier, $features, $aggregation_function)
+    function __construct($identifier, $feature_values)
     {
-        if (gettype($features) == "array") {
+        if (gettype($feature_values) == "array") {
             $this->identifier = $identifier;
-            $this->features = $features;
-            if ($aggregation_function instanceof AggregationFunction) {
-                $this->aggregation_function = $aggregation_function;
-            } else throw new Exception("aggregation_function should be AggregationFunction");
-        } else
+            $this->feature_values = $feature_values;
+
             throw new Exception("features should be array");
-    }
-
-    function aggregate()
-    {
-        $feature_scores = array();
-        foreach ($this->features as $feature) {
-            array_push($feature_scores, $feature->call_membership_function());
-
         }
-        var_dump($this->features);
-        return $this->aggregation_function->call($feature_scores);
+
+//    function aggregate()
+//    {
+//        $feature_scores = array();
+//        foreach ($this->features as $feature) {
+//            array_push($feature_scores, $feature->call_membership_function());
+//
+//        }
+//        var_dump($this->features);
+//        return $this->aggregation_function->call($feature_scores);
+//    }
+
+
     }
-
-
 }
 
 
