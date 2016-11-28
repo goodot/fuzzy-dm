@@ -57,8 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             echo json_encode($response, JSON_UNESCAPED_UNICODE);
         } catch (Exception $e) {
             $error_response = new ErrorResponse();
-            $error_response->status_code = ResponseConstants::not_json_error_code;
-            $error_response->status = ResponseConstants::not_json_error_message;
+            $error_response->status_code = ResponseConstants::exception_error;
+            $error_response->status = ResponseConstants::exception_message;
             $error_response->error_message = $e->getMessage();
 
             echo json_encode($error_response, JSON_UNESCAPED_UNICODE);
