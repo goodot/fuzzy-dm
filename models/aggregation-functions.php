@@ -31,13 +31,17 @@ class GeometricMean implements AggregationFunction
         foreach ($array as $x) {
             $result *= $x;
         }
-        return pow(-$size, $result);
+//        var_dump($result);
+        $response = pow($result, 1/$size);
+        var_dump($response);
+        return $response;
     }
 }
 
 function get_aggregation_function_by_key($key){
     $aggregation_functions = array("ARITHMETIC_MEAN", "GEOMETRIC_MEAN"); //not so pretty TODO prettify
     if(in_array($key, $aggregation_functions)){
+
         switch($key){
             case arithmetic_mean:{
                 return new ArithmeticMean();

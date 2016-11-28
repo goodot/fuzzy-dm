@@ -19,24 +19,29 @@ include "models/model-loader.php";
 
 
 
-$feature1 = new Feature("ასაკი", new Trimf(10, 28, 45));
-$feature2 = new Feature("სიმაღლე", new Trimf(160, 215, 240));
-$feature3 = new Feature("NBA-ში ჩატარებული სეზონების რაოდენობა", new Trimf(0, 10, 20));
+//$feature1 = new Feature("ასაკი", new Trimf(10, 28, 45));
+//$feature2 = new Feature("სიმაღლე", new Trimf(160, 215, 240));
+//$feature3 = new Feature("NBA-ში ჩატარებული სეზონების რაოდენობა", new Trimf(0, 10, 20));
+//
+//$features = array($feature1, $feature2, $feature3);
+//
+//$item1 = new Item("მანუ ჯინობილი", array(39, 198, 15));
+//$item2 = new Item("ტონი პარკერი", array(35, 188, 16));
+//$item3 = new Item("კავაი ლეონარდი", array(25, 201, 3));
+//$item4 = new Item("ზაზა ფაჩულია", array(32, 211, 13));
+//
+//$items = array($item1, $item2, $item3, $item4);
+//
+//$aggregation_function = new ArithmeticMean();
+//
+//
+//$analyzer = new Analyzer($features, $items, $aggregation_function);
+//
+//$results = $analyzer->analyze();
+//
+//echo json_encode($results, JSON_UNESCAPED_UNICODE);
 
-$features = array($feature1, $feature2, $feature3);
 
-$item1 = new Item("მანუ ჯინობილი", array(39, 198, 15));
-$item2 = new Item("ტონი პარკერი", array(35, 188, 16));
-$item3 = new Item("კავაი ლეონარდი", array(25, 201, 3));
-$item4 = new Item("ზაზა ფაჩულია", array(32, 211, 13));
-
-$items = array($item1, $item2, $item3, $item4);
-
-$aggregation_function = new ArithmeticMean();
-
-
-$analyzer = new Analyzer($features, $items, $aggregation_function);
-
-$results = $analyzer->analyze();
-
-echo json_encode($results, JSON_UNESCAPED_UNICODE);
+$test_array = array(2,3,55);
+$geo_mean = new GeometricMean();
+var_dump($geo_mean->call($test_array));

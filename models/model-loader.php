@@ -37,17 +37,22 @@ class Analyzer
         $this->features = $features;
         $this->items = $items;
         $this->aggregation_function = $aggregation_function;
+//        var_dump($this->aggregation_function);
     }
 
     function analyze()
     {
         $results = array();
         $item_count = count($this->items);
-
+        $aggregation_function = $this->aggregation_function;
+//        var_dump($aggregation_function);
         for ($i = 0; $i < $item_count; $i++) {
             $item = $this->items[$i];
             $result = new Result();
+
             $result->score = $this->aggregate($item, $this->features, $this->aggregation_function);
+//            var_dump($result);
+
             $result->item_identifier = $item->identifier;
             array_push($results, $result);
         }
@@ -92,6 +97,7 @@ class Analyzer
         for ($i = 0; $i < $count_features; $i++) {
             array_push($feature_scores, $features[$i]->call_membership_function($item->feature_values[$i]));
         }
+//        var_dump($this->aggregation_function->call($feature_scores));
         return $this->aggregation_function->call($feature_scores);
 
     }

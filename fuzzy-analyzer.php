@@ -43,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             }
 
             $aggregation_function = get_aggregation_function_by_key($aggregation);
-
             $analyzer = new Analyzer($features, $items, $aggregation_function);
             $results = $analyzer->analyze();
 //            var_dump($results);
