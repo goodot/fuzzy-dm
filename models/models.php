@@ -20,6 +20,8 @@ class Feature
 
     function set_weight($weight)
     {
+        if($weight >1 || $weight < 0)
+            throw new Exception("weight must be in a range [0,1]");
         $this->weight = $weight;
     }
 
