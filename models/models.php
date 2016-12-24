@@ -4,6 +4,7 @@ class Feature
 {
     public $identifier;
     public $mem_function;
+    public $weight;
 
 
     function __construct($identifier, $mem_function)
@@ -14,6 +15,17 @@ class Feature
         } else {
             throw new Exception("mem_functon should be MembershipFunction");
         }
+
+    }
+
+    function set_weight($weight)
+    {
+        $this->weight = $weight;
+    }
+
+    function get_weight()
+    {
+        return $this->weight;
     }
 
     function call_membership_function($value)

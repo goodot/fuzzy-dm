@@ -6,13 +6,16 @@ define("weighted_geometric_mean", "WEIGHTED_GEOMETRIC_MEAN");
 define("harmonic_mean", "HARMONIC_MEAN");
 define("weighted_harmonic_mean", "WEIGHTED_HARMONIC_MEAN");
 
+interface Aggregation
+{
 
-interface AggregationFunction
+}
+interface AggregationFunction extends Aggregation
 {
     function call($array);
 }
 
-interface WeightedAggregationFunction
+interface WeightedAggregationFunction extends Aggregation
 {
     function call($array, $weights);
 }

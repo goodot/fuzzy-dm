@@ -46,10 +46,20 @@ include "models/model-loader.php";
 //$geo_mean = new GeometricMean();
 //var_dump($geo_mean->call($test_array));
 
-$ar1 = array(1,2,3);
-$ar2 = array(2,3,4);
+class Test{
+    private $a1;
+    private $a2;
 
-$product = array_multiplication($ar1, $ar2);
-
-
-var_dump($product);
+    function __construct($a)
+    {
+        $this->a1 = $a;
+    }
+    function set_a2($a)
+    {
+        $this->a2 = $a;
+    }
+    function get_a2()
+    {
+        return $this->a2;
+    }
+}
