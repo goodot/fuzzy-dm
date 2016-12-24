@@ -50,6 +50,7 @@ class WeightedArithmeticMean implements WeightedAggregationFunction
 
     }
 }
+
 class WeightedGeometricMean implements WeightedAggregationFunction
 {
     function call($array, $weights)
@@ -59,11 +60,21 @@ class WeightedGeometricMean implements WeightedAggregationFunction
     }
 }
 
+class WeightedHarmonicMean implements WeightedAggregationFunction
+{
+    function call($array, $weights)
+    {
+        $multiplied_array = array_multiplication($array, $weights);
+        return harmonic_average($multiplied_array);
+    }
+}
+
 
 function get_aggregation_function_by_key($key)
 {
     $aggregation_functions = array("ARITHMETIC_MEAN", "GEOMETRIC_MEAN",
-        "HARMONIC_MEAN"); //not so pretty TODO prettify
+        "HARMONIC_MEAN", "WEIGHTED_ARITHMETIC_MEAN", "WEIGHTED_HARMONIC_MEAN",
+        "WEIGHTED_GEOMETRIC_MEAN"); //not so pretty TODO prettify
     if (in_array($key, $aggregation_functions)) {
 
         switch ($key) {
@@ -77,6 +88,18 @@ function get_aggregation_function_by_key($key)
                 break;
             case harmonic_mean: {
                 return new HarmonicMean();
+            }
+                break;
+            case weighted_arithmetic_mean: {
+                return new WeightedArithmeticMean();
+            }
+                break;
+            case weighted_geometric_mean: {
+                return new WeightedGeometricMean();
+            }
+                break;
+            case weighted_harmonic_mean: {
+                return new WeightedHarmonicMean();
             }
                 break;
             default: {
@@ -121,8 +144,8 @@ function array_multiplication($ar1, $ar2)
         throw new Exception("size of arrays are not equal");
     $count = count($ar1);
     $product = array();
-    for ($i = 0; $i < $count; $i++){
-        $multiplication = (float) ($ar1[$i] * $ar2[$i]);
+    for ($i = 0; $i < $count; $i++) {
+        $multiplication = (float)($ar1[$i] * $ar2[$i]);
         array_push($product, $multiplication);
     }
     return $product;
