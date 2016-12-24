@@ -42,6 +42,14 @@ include "models/model-loader.php";
 //echo json_encode($results, JSON_UNESCAPED_UNICODE);
 
 
-$test_array = array(2,3,55);
-$geo_mean = new GeometricMean();
-var_dump($geo_mean->call($test_array));
+//$test_array = array(2,3,55);
+//$geo_mean = new GeometricMean();
+//var_dump($geo_mean->call($test_array));
+
+$ar1 = array(1,2,3);
+$ar2 = array(2,3,4);
+
+$product = array_multiplication($ar1, $ar2);
+
+
+var_dump($product);
