@@ -2,7 +2,7 @@
 
 include "models/model-loader.php";
 
-
+echo "fuzzy-logic";
 //define("PLAYER", "player");
 //$membership_function = new Trimf(160, 215, 240);
 //
@@ -46,20 +46,3 @@ include "models/model-loader.php";
 //$geo_mean = new GeometricMean();
 //var_dump($geo_mean->call($test_array));
 
-class Test{
-    private $a1;
-    private $a2;
-
-    function __construct($a)
-    {
-        $this->a1 = $a;
-    }
-    function set_a2($a)
-    {
-        $this->a2 = $a;
-    }
-    function get_a2()
-    {
-        return $this->a2;
-    }
-}
