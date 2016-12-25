@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ketili\models\aggregation;
+namespace models\aggregation;
 
 
 class Tools

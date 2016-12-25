@@ -1,8 +1,8 @@
 <?php
 
 
-namespace ketili\models\aggregation;
-use ketili\models\Operations;
+namespace models\aggregation;
+use models\Operations;
 
 class WeightedHarmonicMean implements WeightedAggregationFunction
 {

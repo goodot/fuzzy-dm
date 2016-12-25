@@ -1,6 +1,6 @@
 <?php
 
-namespace ketili\models\membership;
+namespace models\membership;
 
 //TODO improve
 class Trimf implements MembershipFunction

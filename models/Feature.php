@@ -1,7 +1,7 @@
 <?php
 
-namespace ketili\models;
-use ketili\models\membership\MembershipFunction;
+namespace models;
+use models\membership\MembershipFunction;
 
 class Feature
 {

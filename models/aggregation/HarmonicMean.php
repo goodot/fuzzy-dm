@@ -1,6 +1,6 @@
 <?php
 
-namespace ketili\models\aggregation;
+namespace models\aggregation;
 
 
 class HarmonicMean implements AggregationFunction

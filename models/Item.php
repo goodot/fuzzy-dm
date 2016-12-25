@@ -1,6 +1,6 @@
 <?php
 
-namespace ketili\models;
+namespace models;
 
 
 class Item

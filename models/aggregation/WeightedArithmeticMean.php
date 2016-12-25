@@ -1,7 +1,7 @@
 <?php
 
-namespace ketili\models\aggregation;
-use ketili\models\Operations;
+namespace models\aggregation;
+use models\Operations;
 
 class WeightedArithmeticMean implements WeightedAggregationFunction
 {
