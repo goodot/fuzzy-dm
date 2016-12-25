@@ -3,7 +3,8 @@
 namespace ketili\models;
 
 
-class Operations{
+class Operations
+{
     static function array_multiplication($ar1, $ar2)
     {
         if (count($ar1) != count($ar2))
