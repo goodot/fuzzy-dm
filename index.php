@@ -1,9 +1,13 @@
 <?php
 
 require_once "autoload.php";
-use models\aggregation;
-use models\membership;
+use models\aggregation\ArithmeticMean;
+use models\membership\Trimf;
 
-$aggregation_function = new aggregation\ArithmeticMean();
+$aggregation_function = new ArithmeticMean();
 
-$aggregation_function->call(array(12, 15, 16));
+var_dump($aggregation_function->call(array(12, 15, 16)));
+
+$trimf = new Trimf(1, 2, 25);
+
+var_dump($trimf);
