@@ -1,15 +1,25 @@
 <?php
 
-spl_autoload_register(function($class){
-    $parts = explode('\\', $class);
-   include_once "models".  DIRECTORY_SEPARATOR . 'aggregation' . DIRECTORY_SEPARATOR . end($parts) . '.php';
+function __autoload($class)
+{
 
-});
-spl_autoload_register(function($class){
-    $parts = explode('\\', $class);
-    include_once "models".  DIRECTORY_SEPARATOR . 'membership' . DIRECTORY_SEPARATOR . end($parts) . '.php';
+    if(file_exists($class. '.php')){
 
-});
+        require_once $class . '.php';
+    }
+//    $directories = array(
+//        'models',
+//        'models/aggregation',
+//        'models/membership'
+//    );
+//    foreach ($directories as $directory) {
+//        if (file_exists($directory . $class) . '.php') {
+//            echo $class;
+//            require_once($directory . $class . '.php');
+//            return;
+//        }
+//    }
+}
 
 
 
