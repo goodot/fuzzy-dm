@@ -21,19 +21,19 @@ class Feature
 
     }
 
-    function set_weight($weight)
+    public function set_weight($weight)
     {
         if($weight >1 || $weight < 0)
             throw new \Exception("weight must be in a range [0,1]");
         $this->weight = $weight;
     }
 
-    function get_weight()
+    public function get_weight()
     {
         return $this->weight;
     }
 
-    function call_membership_function($value)
+    public function call_membership_function($value)
     {
         return $this->mem_function->call($value);
     }

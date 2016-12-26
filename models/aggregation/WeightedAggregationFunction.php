@@ -3,7 +3,7 @@
 
 namespace models\aggregation;
 
-interface WeightedAggregationFunction
+interface WeightedAggregationFunction extends Aggregation
 {
     function call($array, $weights);
 }
