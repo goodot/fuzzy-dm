@@ -1,26 +1,29 @@
 <?php
 
-function __autoload($class)
-{
+function __autoload($class) {
+    $parts = explode('\\', $class);
+    $class_name = end($parts). ".php";
 
-    if(file_exists($class. '.php')){
+        	    $directories = array(
+        	        'models/',
+        	        'models/aggregation/',
+        	        'models/membership/'
+        	    );
+        	    foreach ($directories as $directory) {
+        	        if (file_exists($directory . $class_name)) {
+        	            require_once($directory . $class_name);
+        	            return;
+        	        }
+        	    }
 
-        require_once $class . '.php';
-    }
-//    $directories = array(
-//        'models',
-//        'models/aggregation',
-//        'models/membership'
-//    );
-//    foreach ($directories as $directory) {
-//        if (file_exists($directory . $class) . '.php') {
-//            echo $class;
-//            require_once($directory . $class . '.php');
-//            return;
-//        }
-//    }
+
+
+
 }
 
+//$string = htmlspecialchars('models\aggregation\ArithmeticMean');
+//$pieces = explode(htmlspecialchars('\'), $string);
+//var_dump($pieces);
 
 
 //<?php

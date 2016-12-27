@@ -1,22 +1,20 @@
 <?php
 
 require_once "autoload.php";
-use models\aggregation\ArithmeticMean;
-use models\membership\Trimf;
 
 $aggregation_function = new \models\aggregation\ArithmeticMean();
 $weighted_aggregation_function = new \models\aggregation\WeightedArithmeticMean();
-var_dump(class_implements($weighted_aggregation_function));
-var_dump($weighted_aggregation_function instanceof \models\aggregation\AggregationFunction);
+//var_dump(class_implements($weighted_aggregation_function));
+//var_dump($weighted_aggregation_function instanceof \models\aggregation\AggregationFunction);
 //$trimf = new Trimf(1, 2, 25);
 
-$height = new \models\Feature("Height", new Trimf(160, 190, 203));
+$height = new \models\Feature("Height", new \models\membership\Trimf(160, 190, 203));
 $height->set_weight(0.79);
 
-$age = new \models\Feature("Age", new Trimf(16, 25, 30));
+$age = new \models\Feature("Age", new \models\membership\Trimf(16, 25, 30));
 $age->set_weight(0.81);
 
-$seasons = new \models\Feature("Seasons", new Trimf(0, 5, 20));
+$seasons = new \models\Feature("Seasons", new \models\membership\Trimf(0, 5, 20));
 $seasons->set_weight(0.61);
 
 
