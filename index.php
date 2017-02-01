@@ -11,7 +11,7 @@ $weighted_aggregation_function = new \models\aggregation\WeightedArithmeticMean(
 $height = new \models\Feature("Height", new \models\membership\Trimf(160, 190, 203));
 $height->set_weight(0.79);
 
-$age = new \models\Feature("Age", new \models\membership\Trimf(16, 25, 30));
+$age = new \models\Feature("Age", new \models\membership\S(10, 30));
 $age->set_weight(0.81);
 
 $seasons = new \models\Feature("Seasons", new \models\membership\Trimf(0, 5, 20));
@@ -43,5 +43,16 @@ $result = $analyzer->analyze();
 
 var_dump($result);
 var_dump($analyzer->suggest_best());
+
+
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+
+
+
 
 

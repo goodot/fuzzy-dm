@@ -1,6 +1,10 @@
 <?php
 
-function __autoload($class) {
+
+
+spl_autoload_register("autoload");
+
+function autoload($class) {
     $parts = explode('\\', $class);
     $class_name = end($parts). ".php";
 
