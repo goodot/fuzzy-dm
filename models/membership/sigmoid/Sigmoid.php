@@ -3,16 +3,18 @@
  * Created by JetBrains PhpStorm.
  * User: godot
  * Date: 2/1/17
- * Time: 7:33 PM
+ * Time: 8:01 PM
  * To change this template use File | Settings | File Templates.
  */
 
-namespace models\membership;
+namespace models\membership\sigmoid;
 
-class S implements  MembershipFunction{
+
+use models\membership\MembershipFunction;
+
+abstract class Sigmoid implements MembershipFunction{
     public $a;
     public $b;
-
     function __construct($a, $b)
     {
         if($a>=$b)
@@ -22,16 +24,5 @@ class S implements  MembershipFunction{
 
         $this->a = $a;
         $this->b = $b;
-
-    }
-    function call($x)
-    {
-        if($x < $this->a)
-            return 0;
-        if($x > $this->b)
-            return 1;
-
-        return (1./2) + 1./2*cos((($x-$this->b)*M_PI)/($this->b - $this->a));
-
     }
 }

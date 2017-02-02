@@ -1,6 +1,12 @@
 <?php
 
-namespace models\membership;
+namespace models\membership\polygon;
+
+
+
+use models\membership\MembershipFunction;
+
+
 
 //TODO improve
 class Trimf implements MembershipFunction

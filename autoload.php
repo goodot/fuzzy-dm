@@ -11,7 +11,9 @@ function autoload($class) {
         	    $directories = array(
         	        'models/',
         	        'models/aggregation/',
-        	        'models/membership/'
+                    'models/membership/',
+        	        'models/membership/sigmoid/',
+        	        'models/membership/polygon/'
         	    );
         	    foreach ($directories as $directory) {
         	        if (file_exists($directory . $class_name)) {
