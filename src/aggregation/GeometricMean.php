@@ -1,7 +1,7 @@
 <?php
 
 
-namespace models\aggregation;
+namespace ketili\aggregation;
 
 
 class GeometricMean implements AggregationFunction

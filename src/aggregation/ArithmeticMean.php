@@ -1,6 +1,6 @@
 <?php
 
-namespace models\aggregation;
+namespace ketili\aggregation;
 
 
 class ArithmeticMean implements AggregationFunction

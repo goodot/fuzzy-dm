@@ -1,7 +1,7 @@
 <?php
 
 
-namespace models\aggregation;
+namespace ketili\aggregation;
 
 interface WeightedAggregationFunction extends Aggregation
 {

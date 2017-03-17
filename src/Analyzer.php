@@ -1,7 +1,7 @@
 <?php
 
 namespace models;
-use models\aggregation\Aggregation;
+use ketili\aggregation\Aggregation;
 
 class Analyzer
 {

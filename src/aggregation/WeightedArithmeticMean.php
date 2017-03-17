@@ -1,6 +1,6 @@
 <?php
 
-namespace models\aggregation;
+namespace ketili\aggregation;
 use models\Operations;
 
 class WeightedArithmeticMean implements WeightedAggregationFunction
