@@ -5,6 +5,7 @@ namespace ketili\membership\polygon;
 
 
 use ketili\membership\MembershipFunction;
+//use model\membership\MembershipFunction;
 
 
 
