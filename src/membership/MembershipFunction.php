@@ -1,6 +1,6 @@
 <?php
 
-namespace models\membership;
+namespace ketili\membership;
 
 
 interface MembershipFunction
