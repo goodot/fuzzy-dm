@@ -10,7 +10,7 @@
 namespace ketili\membership\sigmoid;
 
 
-use models\membership\MembershipFunction;
+use ketili\membership\MembershipFunction;
 
 abstract class Sigmoid implements MembershipFunction{
     public $a;
