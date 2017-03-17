@@ -1,6 +1,6 @@
 <?php
 
-namespace models\membership\polygon;
+namespace ketili\membership\polygon;
 
 
 

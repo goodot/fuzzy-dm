@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace models\membership\sigmoid;
+namespace ketili\membership\sigmoid;
 
 class SNonLinear extends   Sigmoid{
     function call($x)
