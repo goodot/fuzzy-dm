@@ -2,7 +2,7 @@
 
 
 namespace ketili\aggregation;
-use models\Operations;
+use ketili\Operations;
 
 class WeightedHarmonicMean implements WeightedAggregationFunction
 {
