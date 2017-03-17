@@ -2,6 +2,8 @@
 
 namespace models;
 use ketili\aggregation\Aggregation;
+use ketili\Item;
+use ketili\Result;
 
 class Analyzer
 {
