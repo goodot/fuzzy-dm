@@ -4,7 +4,7 @@ namespace ketili\membership\polygon;
 
 
 
-use models\membership\MembershipFunction;
+use ketili\membership\MembershipFunction;
 
 
 
