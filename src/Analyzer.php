@@ -1,9 +1,10 @@
 <?php
 
-namespace models;
+namespace ketili;
 use ketili\aggregation\Aggregation;
 use ketili\Item;
 use ketili\Result;
+use ketili\Feature;
 
 class Analyzer
 {
