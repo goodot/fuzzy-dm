@@ -7,7 +7,7 @@ class Feature
 {
     public $identifier;
     public $mem_function;
-    public $weight;
+    public $weight = 1;
 
 
     function __construct($identifier, $mem_function)

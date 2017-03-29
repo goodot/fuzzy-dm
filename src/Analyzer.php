@@ -1,6 +1,7 @@
 <?php
 
 namespace ketili;
+
 use ketili\aggregation\Aggregation;
 use ketili\Item;
 use ketili\Result;
@@ -30,32 +31,31 @@ class Analyzer
             throw new \Exception("aggregation_function should be Aggregation");
 
 
-
         $this->features = $features;
-        $this->check_feature_weights();
+//        $this->check_feature_weights();
         $this->items = $items;
         $this->aggregation_function = $aggregation_function;
 //        var_dump($this->aggregation_function);
     }
 
-    private function check_feature_weights()
-    {
-        $this->have_weight = false;
-        foreach ($this->features as $feature) {
-            if($feature->get_weight() != null){
-                $this->have_weight = true;
-                break;
-            }
-
-        }
-        if($this->have_weight){
-            foreach($this->features as $feature){
-                if($feature->get_weight() == null){
-                    throw new \Exception("if even one feature has weight, all of features must have weight");
-                }
-            }
-        }
-    }
+//    private function check_feature_weights()
+//    {
+//        $this->have_weight = false;
+//        foreach ($this->features as $feature) {
+//            if($feature->get_weight() != null){
+//                $this->have_weight = true;
+//                break;
+//            }
+//
+//        }
+//        if($this->have_weight){
+//            foreach($this->features as $feature){
+//                if($feature->get_weight() == null){
+//                    throw new \Exception("if even one feature has weight, all of features must have weight");
+//                }
+//            }
+//        }
+//    }
 
 
     function analyze()
@@ -115,18 +115,14 @@ class Analyzer
         for ($i = 0; $i < $count_features; $i++) {
             array_push($feature_scores, $features[$i]->call_membership_function($item->feature_values[$features[$i]->identifier]));
         }
-//        var_dump($this->aggregation_function->call($feature_scores));
         $score = 0;
-        if($this->have_weight) {
-            $feature_weights = array();
-            foreach ($features as $feature){
-                array_push($feature_weights, $feature->get_weight());
-            }
-            $score = $this->aggregation_function->call($feature_scores, $feature_weights);
-//            var_dump($score);
+
+        $feature_weights = array();
+        foreach ($features as $feature) {
+            array_push($feature_weights, $feature->get_weight());
         }
-        else
-            $score = $this->aggregation_function->call($feature_scores);
+        $score = $this->aggregation_function->call($feature_scores, $feature_weights);
+
         return $score;
 
     }
