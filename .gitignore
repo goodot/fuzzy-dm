@@ -10,7 +10,8 @@
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
-
+tests/*
+tests/autoload.php
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml

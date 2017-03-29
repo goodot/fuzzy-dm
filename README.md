@@ -85,7 +85,7 @@ $height = new Feature("Height", new Trimf(160, 190, 203));
 <p><font size="2">(best option is 30 and worst is 10)</font></p>
 </br>
 
-<code>seasons = new Feature("Seasons", new Trimf(0, 5, 20));</code>
+<code>$seasons = new Feature("Seasons", new Trimf(0, 5, 20));</code>
 </br>
 <p><font size="2">(best option is 5)</font></p>
 </br>
@@ -103,13 +103,13 @@ Create <i>items</i>:
 <code>
 $items = array(</code>
 </br>
-            &nbsp;&nbsp;<code>new Item("Manu Ginobili", array(198, 39, 15)),</code>
+            &nbsp;&nbsp;<code>new Item("Manu Ginobili", array("Height"=>198, "Age"=>39, "Seasons"=>15)),</code>
             </br>
-            &nbsp;&nbsp;<code>new Item("Tony Parker", array(188, 34, 16)),</code>
+            &nbsp;&nbsp;<code>new Item("Tony Parker", array("Height"=>188, "Seasons"=>15, "Age"=>34)),</code>
             </br>
-            &nbsp;&nbsp;<code>new Item("JJ Barea", array(183, 32, 10)),</code>
+            &nbsp;&nbsp;<code>new Item("JJ Barea", array("Height"=> 183, "Age"=>32, "Seasons"=>10)),</code>
             </br>
-            &nbsp;&nbsp;<code>new Item("Sergio Rodriguez", array(191, 30, 5))</br>
+            &nbsp;&nbsp;<code>new Item("Sergio Rodriguez", array("Height"=>191, "Age"=>30, "Seasons"=>5))</br>
         );</code>
 
 
@@ -120,6 +120,9 @@ $items = array(</code>
 </br></br>
 <code>$analyzer = new Analyzer($features, $items, $weightedAggregationFunction);</code>
 
+</br>
+<code>$analyzer->analyze();</code>
+</br>
 </br>
 <b>Output would be like this:</b>
 <code>

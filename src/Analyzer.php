@@ -111,8 +111,9 @@ class Analyzer
         $feature_scores = array();
         $count_features = count($this->features);
 
+        var_dump($item);
         for ($i = 0; $i < $count_features; $i++) {
-            array_push($feature_scores, $features[$i]->call_membership_function($item->feature_values[$i]));
+            array_push($feature_scores, $features[$i]->call_membership_function($item->feature_values[$features[$i]->identifier]));
         }
 //        var_dump($this->aggregation_function->call($feature_scores));
         $score = 0;
