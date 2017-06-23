@@ -110,7 +110,7 @@ class Analyzer
 
             }
         }
-        return array_splice($this->working_results, $max_element_index, 1);
+        return array_splice($this->working_results, $max_element_index, 1)[0];
 
     }
 
