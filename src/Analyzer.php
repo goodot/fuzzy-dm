@@ -16,6 +16,7 @@ class Analyzer
 
 
     private $results;
+    private $working_results;
 
     function __construct($features, $items, $aggregation_function)
     {
@@ -73,6 +74,44 @@ class Analyzer
         }
         $this->results = $results;
         return $results;
+    }
+
+    function top($top)
+    {
+        $this->working_results = $this->results;
+        $top_results = array();
+
+        if ($this->working_results) {
+            if (count($this->working_results) > $top) {
+                for ($i = 0; $i < $top; $i++) {
+                    array_push($top_results, $this->max_result());
+                }
+
+                return $top_results;
+            }
+            else{
+                return $this->working_results;
+            }
+        }
+        else{
+            return null;
+        }
+    }
+
+    private function max_result()
+    {
+        $count = count($this->working_results);
+        $max_element = $this->working_results[0];
+        $max_element_index = 0;
+        for ($i = 1; $i < $count; $i++) {
+            if ($this->working_results[$i]->score > $max_element->score) {
+                $max_element = $this->working_results[$i];
+                $max_element_index = $i;
+
+            }
+        }
+        return array_splice($this->working_results, $max_element_index, 1);
+
     }
 
     function suggest_best()
