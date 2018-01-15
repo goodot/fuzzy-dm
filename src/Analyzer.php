@@ -82,18 +82,36 @@ class Analyzer
         $top_results = array();
 
         if ($this->working_results) {
-            if (count($this->working_results) > $top) {
-                for ($i = 0; $i < $top; $i++) {
-                    array_push($top_results, $this->max_result());
-                }
+            if (count($this->working_results) < $top)
+                $top = count($this->working_results);
 
-                return $top_results;
+
+            for ($i = 0; $i < $top; $i++) {
+                array_push($top_results, $this->max_result());
             }
-            else{
-                return $this->working_results;
-            }
+
+            return $top_results;
+        } else {
+            return null;
         }
-        else{
+    }
+
+    function sort()
+    {
+        $this->working_results = $this->results;
+        $top_results = array();
+
+
+        if ($this->working_results) {
+            $top = count($this->working_results);
+
+
+            for ($i = 0; $i < $top; $i++) {
+                array_push($top_results, $this->max_result());
+            }
+
+            return $top_results;
+        } else {
             return null;
         }
     }
