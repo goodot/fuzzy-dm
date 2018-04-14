@@ -1,4 +1,4 @@
-<H1>Installation<H1>
+<H1>Installation</H1>
 
 		composer require ketili/fuzzydm
 
