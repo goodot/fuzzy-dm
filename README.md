@@ -1,3 +1,7 @@
+##Installation
+
+		composer require ketili/fuzzydm
+
 You can make simple decisions using this lib. For example you are manager of some basketball team and you want to make profitable transfer
 for your club. You should select players by different skills and features.
 
@@ -145,12 +149,3 @@ $items = array(</code>
   }
 ]
 </code>
-
-
-
-
-
-
-
-
-
