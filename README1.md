@@ -8,7 +8,16 @@ This repo is a small PHP library to make multi criteria decisions. It is depende
 
  ## Example
  
-_here will be exmple_
+Let's imagine that we have following list of guards with their characteristics:![](https://usatftw.files.wordpress.com/2017/11/manu-ginobili.jpg?w=1000&h=600&crop=1)
+
+we have some key criterias, let's assume that best desirable age of our guard is in range [24,26], so for age if we take rectangular membership function will not be bad: 
+
+![](https://lh3.googleusercontent.com/M07hoNA4Dorj5B4TLCI6pOj8eyLEYjgtHEWrabqr3RvCBx1v759VhbA4u1203Waff2kO3PeYznEZSUfY6MwkdOQnm5-b4vc5ZPRBp_PfBuwSR08G5M8RPnKSwfwkV0CCM4AwDmfK0wUfGhXhvfozSkJ0RL9itiEVAhbucSqH4VfTD7ZX-hAtd71LLNk1vgKuoEnuMKyUJZxgG4QoIUunlw0fCEA_24LCmnrqf1X71jJNQsH2bSsSqbZsCNNZ_JompwR5Zs4V940Ef8SYuULonXGJhK_8LDIcRAtbV1PBoH7xl2C51CV9at_bokKO3D9uoc81Z2GkCeHYj-Re0P9978IU8jmncrTqwpNWv2RRvNytGyrV22hCaUzjMbN-rMkbONLa-AA56d4Qk184WmePmDuepFaL35_SjaJRyvb_0_M2g_oinTw-mMjg92J0SVKlJ_XYrHJJKJa6DIM7OdYbRthkuTKCJWarFEehHg2oPmUHmv4jb8qKmXV0-blXH61bgYJJGIfBRP6nUwBj1VWcTi3PPLnZV0hmPRPKKL0YmhSG1kjH62N3_LSh7b7kXMqmYTY0aiS7CYP79gSLKAZlzEGFqg9j_b0AuNjLh-4=w640-h480-no)
+
+it means that this function returns it's maximal value (1) in range [24, 26].
+
+Also we just have 20 million dollars and we want to not waste all your money but also you don't need to buy cheap player, because in trademarket cost means player efficiency. Let's take there triangular function like that: 
+![](https://lh3.googleusercontent.com/4KmPAJMpUjW0oBrNieXh3R0JKVGu2JC56bsgkqjjC_fJwrQt1V2g92f1BTvLz9ye10ATYS7GnpvcwTBP5NtVljBt38J-y-etsTz-dYQxQWmBmWqZRmZ4E9IwSEHATlEHy3OXeG32cBtrxhuNlVKnXCxgxXm-jA9TO0MTau50oBSinfzlI4vW3dpJPrrqrOWkGZDAVCbaXjpcZJT7Fh9KRc2FwiasBX7sNd0laFEG4M9IkqbeQj1ZloF2I0S3iekPcUs61F8LzxBNiKAAFoJiyiy03Q-_WvSX2i8CBWnCqlP-bUFrZSocCvquoe6cjYWLffEpFYW77MDWHjYxAQ6sYEQ1mRidTSfSgXr85xTVuMQbxzN3s1nUoF1lXvpQhBdowFs4_Cbf0-s0cv2e78xAM6eE_1nl9Ch0HaeXemyAaQkWPw-BA-3NW2Qp8gaCCpw304_WoAhHWNokXr2TfuFUm_JTZDmnK5QVTl_feh6qA9W-ww-9px6ptgbe9sonESuVw4xuBRRDGU7Usf2mTbldA4QdEnHOQGTbpIda9YJfgOZt0jsxOlkjEVOdLY4HgOzXondFMn78OBTY-GYmPtkJ31OkjPz7kiK7xqBtUz0=w640-h480-no)
 
 ## Feedbacks and Pull Requests
 
