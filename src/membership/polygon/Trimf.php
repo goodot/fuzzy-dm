@@ -5,11 +5,8 @@ namespace ketili\membership\polygon;
 
 
 use ketili\membership\MembershipFunction;
-//use model\membership\MembershipFunction;
 
 
-
-//TODO improve
 class Trimf implements MembershipFunction
 {
     public $a, $b, $c;
