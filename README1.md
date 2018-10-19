@@ -8,7 +8,7 @@ This repo is a small PHP library to make multi criteria decisions. It is depende
 
  ## Example
  
-Let's imagine that we have following list of guards with their characteristics:![](https://lh3.googleusercontent.com/1xZ38CfuR4-2e2U5EMrh_LFSFYHgutnrD8YQv9OyHJFmzVoAdBM8pdOkKXLMcqASdZYuJDiqLqo2TIYRdgYqDxqCRFytPbAfeW9PljAAIYcHX66DZ9dZIRFiRZnX77gK4IpPvOnPopNKqxONEe4MCxKMVhCQopd61G-0oJfByy3D8zNn-6UB4Leunz_wcSOudn0eNYTpbDKs2NcGbJ3-nT-5nqVo9CgFIBNlQaqy_xiPyCc-O6EyUwZsqhJQ71Usokv3hoHTbCbjgHVmEFzbFRZRH2PLGOD89XxU_QHkO8pjXMxlLve0ya7yPlYX-GwXeIwUF7EedHwkRSz-QJGXhO9EFtx2Re_7RObCiTHkGTXfHqsYAVJX-oo5Nu1gdFYs4aztSSXUr4UJM2wbeK0R0O3zo-g7KTukEDz-2nea_vD39VbDHCA1eBMyOy1EDtSoW3QAx85pylFt7SRGtAT7Btz6G5N3nI6isNhV3GoyO5B9zXnGC2dbrsbPjzS9YhGT80uzjgub8l2l8-H7Y0YN0KP3qv_JteppjxLVaMpsAmsJ-0P_R_8sR85jHSEfFDu4f__rggwPfjqz58gDM58PSSm7nj0NWA=s660-w660-h529-no)
+Let's imagine that we have following list of guards with their characteristics:![](https://usatftw.files.wordpress.com/2017/11/manu-ginobili.jpg?w=1000&h=600&crop=1)
 
 we have some key criterias, let's assume that best desirable age of our guard is in range [24,26], so for age if we take rectangular membership function will not be bad: 
 
