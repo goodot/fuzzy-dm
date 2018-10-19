@@ -13,7 +13,7 @@ Let's imagine that we have following list of guards with their characteristics:
 
 **1. Age**
 
-You said you need an young player doesn't you? So what is a aproximately good age for being young and also experienced a little bit? I think 24, 25 or 26... or some age nearer those numbers. Let's make membership function to express your requirement. Would be better if we use trapezoid membership function which actually looks like: ![](https://lh3.googleusercontent.com/k4UbxhiXKEn2xpl6ZDsD8jL5ZQyMYogXnBh3B10fp6FyaRqgJ9rDxZYub5LdUy5BifbLqPYMLHh-WLwhNI-b7NWMKJKA-NIlxBNRc_SJlD_dqnY1s0ZHZOnjvkpMGUevm1RVSj5yyAKdgB1OcChUHWkriVn-OCXdfFE2ZEd-_pjYE6m1ow788Ec6Zd2TWQ9ONHfmWgVDJilvHoh13VkmTZasIcRGQzkAW3EhdI_wRBgfnXW5XQAq0Nku_gHlNyJt_jwKOEE1FF6wpYAnuf8qDrqNPuUO4z4eRdQPEsQXoejFt7x9vzW5YPDE_Auv55rwwm0ucO46KvAh8MzSfO_7aD6Zax_6J5FOhPVy13P3ZYf6z08Ran5YvmQME9rBfJcmEj7YtHJ3x71Eo2R35JMBeOKI9SR-9yEAzq34sfmpon76ZDcOwU2E0Q7UB5XMpUyIOdFGRq9Eu_ZpOdMcDYqgR_kRvwozRGZPVfMRVhyBl7AYSmyrauYZXvwyzay4kqvABKGpd74TCUuoN2XGNmIEXnn8roFe0yvN8JIzlWt9Er4OI-NElv-LHXvmr6jnAe9EhY7J-xrKcmnQ1k3jclEVigcTsfBtiQeJQfp4ZSY=w258-h143-no)
+Assume we need an young player. So what is a aproximately good age for being young and also experienced a little bit? I think 24, 25 or 26... or some age nearer those numbers. Let's make membership function to express your requirement. Would be better if we use trapezoid membership function which actually looks like: ![](https://lh3.googleusercontent.com/k4UbxhiXKEn2xpl6ZDsD8jL5ZQyMYogXnBh3B10fp6FyaRqgJ9rDxZYub5LdUy5BifbLqPYMLHh-WLwhNI-b7NWMKJKA-NIlxBNRc_SJlD_dqnY1s0ZHZOnjvkpMGUevm1RVSj5yyAKdgB1OcChUHWkriVn-OCXdfFE2ZEd-_pjYE6m1ow788Ec6Zd2TWQ9ONHfmWgVDJilvHoh13VkmTZasIcRGQzkAW3EhdI_wRBgfnXW5XQAq0Nku_gHlNyJt_jwKOEE1FF6wpYAnuf8qDrqNPuUO4z4eRdQPEsQXoejFt7x9vzW5YPDE_Auv55rwwm0ucO46KvAh8MzSfO_7aD6Zax_6J5FOhPVy13P3ZYf6z08Ran5YvmQME9rBfJcmEj7YtHJ3x71Eo2R35JMBeOKI9SR-9yEAzq34sfmpon76ZDcOwU2E0Q7UB5XMpUyIOdFGRq9Eu_ZpOdMcDYqgR_kRvwozRGZPVfMRVhyBl7AYSmyrauYZXvwyzay4kqvABKGpd74TCUuoN2XGNmIEXnn8roFe0yvN8JIzlWt9Er4OI-NElv-LHXvmr6jnAe9EhY7J-xrKcmnQ1k3jclEVigcTsfBtiQeJQfp4ZSY=w258-h143-no)
 
 where a, b, c and d are numeric parameters, indicating corners of trapezoid-shaped graph. If we take a, b, c and d consecutively 18, 24, 26, 35 we would get graph like that: 
 ![](https://lh3.googleusercontent.com/M07hoNA4Dorj5B4TLCI6pOj8eyLEYjgtHEWrabqr3RvCBx1v759VhbA4u1203Waff2kO3PeYznEZSUfY6MwkdOQnm5-b4vc5ZPRBp_PfBuwSR08G5M8RPnKSwfwkV0CCM4AwDmfK0wUfGhXhvfozSkJ0RL9itiEVAhbucSqH4VfTD7ZX-hAtd71LLNk1vgKuoEnuMKyUJZxgG4QoIUunlw0fCEA_24LCmnrqf1X71jJNQsH2bSsSqbZsCNNZ_JompwR5Zs4V940Ef8SYuULonXGJhK_8LDIcRAtbV1PBoH7xl2C51CV9at_bokKO3D9uoc81Z2GkCeHYj-Re0P9978IU8jmncrTqwpNWv2RRvNytGyrV22hCaUzjMbN-rMkbONLa-AA56d4Qk184WmePmDuepFaL35_SjaJRyvb_0_M2g_oinTw-mMjg92J0SVKlJ_XYrHJJKJa6DIM7OdYbRthkuTKCJWarFEehHg2oPmUHmv4jb8qKmXV0-blXH61bgYJJGIfBRP6nUwBj1VWcTi3PPLnZV0hmPRPKKL0YmhSG1kjH62N3_LSh7b7kXMqmYTY0aiS7CYP79gSLKAZlzEGFqg9j_b0AuNjLh-4=w640-h480-no)
@@ -32,13 +32,13 @@ where a, b and c are numeric params indicating corners of triangle-shaped graph:
 ![](https://lh3.googleusercontent.com/dATKAE-sJlo8g1zqsQNiiKosXc6pCQp8ctiNqqt8T0tqBzQ_MlJ2TPqUdiaasK6SQZEWpiW96jxrK0Pj6EP9I_8qZy8bEv3U01PFLjCXPV1YJADhpyryPOCyfsZNBkPLnxf65VE5u9N-DRTmQxUpnD77pA5bXi929AT89nhjo83AiCnzBFVmu_O0A5Ac2rwrJPLqywijhfmc8qTEzquE2F0Z8J5nXAQfoZ46MxAAI8-3N2kUMnEEB0fq9Q-l_pUqoCXLYfZ-mVnoT1-0GlMKPbSXAQ5q8WgdSGGXNNiSV1FxIwJv41uoVEULyf4UdWtgytYbACAi-QdYF7RgIgGLyvXPKPXSbGPeL7y7rDSm4QPQFhkTPcOgZxq0vYlb1mkhJ6Lc5RwBLiD2mX0sF1WzXFs2PZH_pKR_KIJDiu2FxV-reOmmsVG49V_26_CAxB1V90sGMFokhaXzfO4SuFDCsjW2OE0_yu_tyvXhhiPEnamf7buddlO5lbqHHL6SRrPMXq3VHaHOc0l2Jvjb0qHy4w28qztb0g1PwlB1I1BDLuHEe66G3tr_FZcZHd-Z_rJULpdq0X56_qeuA-DVaOj7ECzSJnP8OZ6pvXarlD4=w640-h480-no)
 
 
-in this graph a = 0, b = 5, c = 13 and it means that your favorite option would be player with 5 years of NBA experience.  
+in this graph **a = 0, b = 5, c = 13** and it means that your favorite option would be player with 5 years of NBA experience.  
 
 
 
 **3. Cost**
 
-You just have 20 million dollars and you want to not waste all your money but also you don't need to buy cheap player, because in trademarket cost means player efficiency. So let's use triangle function again with parameters a = 0, b = 13 and c = 20
+You just have 20 million dollars and you want to not waste all your money but also you don't need to buy cheap player, because in trademarket cost means player efficiency. So let's use **triangular function again with parameters a = 0, b = 13 and c = 20**
 
 ![](https://lh3.googleusercontent.com/4KmPAJMpUjW0oBrNieXh3R0JKVGu2JC56bsgkqjjC_fJwrQt1V2g92f1BTvLz9ye10ATYS7GnpvcwTBP5NtVljBt38J-y-etsTz-dYQxQWmBmWqZRmZ4E9IwSEHATlEHy3OXeG32cBtrxhuNlVKnXCxgxXm-jA9TO0MTau50oBSinfzlI4vW3dpJPrrqrOWkGZDAVCbaXjpcZJT7Fh9KRc2FwiasBX7sNd0laFEG4M9IkqbeQj1ZloF2I0S3iekPcUs61F8LzxBNiKAAFoJiyiy03Q-_WvSX2i8CBWnCqlP-bUFrZSocCvquoe6cjYWLffEpFYW77MDWHjYxAQ6sYEQ1mRidTSfSgXr85xTVuMQbxzN3s1nUoF1lXvpQhBdowFs4_Cbf0-s0cv2e78xAM6eE_1nl9Ch0HaeXemyAaQkWPw-BA-3NW2Qp8gaCCpw304_WoAhHWNokXr2TfuFUm_JTZDmnK5QVTl_feh6qA9W-ww-9px6ptgbe9sonESuVw4xuBRRDGU7Usf2mTbldA4QdEnHOQGTbpIda9YJfgOZt0jsxOlkjEVOdLY4HgOzXondFMn78OBTY-GYmPtkJ31OkjPz7kiK7xqBtUz0=w640-h480-no)
 
@@ -50,14 +50,14 @@ Of course point guards are not too tall because they should be quick, could move
 
 > In the NBA, point guards are usually about 6' 3" (1.93 m) or shorter, and average about 6' 2" (1.88 m) whereas in the WNBA, point guards are usually 5' 9" (1.75 m) or shorter. Having above-average size (height, muscle) is considered advantageous, although size is secondary to situational awareness, speed, quickness, and ball handling skills.
 
-Lets take triangle again, a = 160, b = 188, c = 205
+Lets take **triangular** again, **a = 160, b = 188, c = 205**
 
 ![](https://lh3.googleusercontent.com/gEP8-kD6ATrMcdtNzNYDZwq8trW-L9v1b45o_FqjrVLtdSnekIKJg92Zp9pKZb9XYp2kRNLy2tUTEtUtfAUbgAtRMWgoEpB4bPvkeqHgkAEcDcVOdXRFYdWdVQH6BBlMfO7vgDiW3ulZH08v1wXlHfGl9PWRHD50O6a4TEO4fArI8FNqDB-cVEhdfBPe_P2Ez9iZm-zsKjpk0JZGpgTs05DqSAZHEY-cKRCrNcNaafu-cPfd12h45OiZx3Hg3hSOFzPwPYF1koJq6tYua_PKy0xAi5hoDKAPE7_HLnG9e_wIkap5xLV0mjSWKth9Np4-boEF_fAPZo7bWFbo2U_PJoBlKClxr9DLaHhVP8GtaYk7Pz0i0R6uSWMIv1u2tS2V6cSVfXiKWd0gDmPpIx02gATOcsGTiKD0LPN3oNJR9LGQUDi4_OEWf4ZrDooEN1yZ0k9AkRt845EHmFbIrUYeumM89CR88kJ65dp3oLMBfmAmYkigvSlWAfzucCtY1DfpwxHHvJeFx4GeyxElB9XDpwBvTP82dqX8XI0T9O2wmr9Qf2Q-E32NsEiC7WxN5ByXki_VZEoNCRvQyFzSbPJqPG5Mtonir9LL1Aji22g=w640-h480-no)
 
 
 **5. Assists per game (APG)**
 
-Here we choose some non fundamental, custom membership function which has horizontal asymptote on y=1
+Here we choose some non fundamental, **custom membership function** which has horizontal asymptote on y=1
 
 ![](https://lh3.googleusercontent.com/5nyi-gpoFxKi3KWzJgRJrSRE_3tzNNPSMJka4636Arxzj6de4MBEG6pSY4GmMJmwBhUv9AFrXiGDX4-s-capAq_YDOyYdybZC8yib4sFuy8fm6u364jCV10VetuKI-sihylRuarCtzYqzjxEt-0X58tynlXEwE2tYou2dBHKbaVNunnAD44S4xQe5cI5N4sgecV0UZrtIK7A85OG8W-6SrjAQTaw8VByXinQd61XaFVD__ziBvOzkPp0EBHBa0UqVmnNcmzpHOWWcSI0YBP2nzcZdh8zDNshzKZD6fAotc9XCNJGXyeIYWgU27LuihzzjHlSSkUOlRdOr-y_PffdFhts046yxBXlh6-2gW1JMO95p3Mttjqg-FZrjUXZB1Ktc8p8Z01OwffmrP-_lB0M7BwLub6BnqjX0hTH6hSk9AyDVQ9xi4tATN_0OP3LvfbWvCCF0-O2GDrME5j5RAj_c0oyzy5ukPUFhoA9n_xaaf6jNJ_Jzgg4lp0NPVofbJIxAKxiSt8rUJqwgXpgqoKHy2FlLAGcRpj22_FpUwMSx94uPQ_AjqNXUcMHVPJM-paKz2_Xd986V-8bnYpsxLCaTKw6J-rXeI1SR2bTvXg=w640-h480-no)
 
