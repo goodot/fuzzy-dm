@@ -7,8 +7,8 @@ namespace ketili\aggregation;
 class Mean{
     static function average($array)
     {
-        $count = count($array);
-        $sum = array_sum($array);
+        $count = (float)count($array);
+        $sum = (float)array_sum($array);
 
         return $sum / $count;
     }

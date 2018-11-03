@@ -10,6 +10,8 @@ namespace ketili\membership\polygon;
 
 use ketili\membership\MembershipFunction;
 
+
+//TODO test
 class Trapmf implements MembershipFunction
 {
     public $a, $b, $c, $d;
@@ -41,14 +43,14 @@ class Trapmf implements MembershipFunction
         $c = (float)$this->c;
         $d = (float)$this->d;
 
-        if($x <= $a)
+        if ($x <= $a)
             return 0;
-        else if($a < $x &&  $x<=$b)
-            return ($x -$a)/($b-$a);
-        else if($b <$x && $x <= $c)
+        else if ($a < $x && $x <= $b)
+            return ($x - $a) / ($b - $a);
+        else if ($b < $x && $x <= $c)
             return 1;
-        else if($c <$x && $x <= $d)
-            return ($d-$x)/($d-$c);
+        else if ($c < $x && $x <= $d)
+            return ($d - $x) / ($d - $c);
         return 0;
 
     }
