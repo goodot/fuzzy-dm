@@ -170,7 +170,10 @@ class Analyzer
 
 
         for ($i = 0; $i < $count_features; $i++) {
-            array_push($feature_scores, $features[$i]->call_membership_function($item->feature_values[$features[$i]->identifier]));
+            if (array_key_exists($features[$i]->identifier, $item->feature_values))
+                array_push($feature_scores, $features[$i]->call_membership_function($item->feature_values[$features[$i]->identifier]));
+            else throw new \Exception("feature values doesn't have key [".$features[$i]->identifier."]. Item: [".
+                $item->identifier."]");
         }
 
         $feature_weights = array();

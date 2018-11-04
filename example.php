@@ -34,6 +34,7 @@ class TPP implements MembershipFunction
 }
 
 
+
 /* without weights (priorities) */
 
 //aggregate function
@@ -67,6 +68,7 @@ $arr = array($age->call_membership_function(31),
 echo array_sum($arr)/count($arr);
 
 //guards
+
 $guards = array(
     new Item($identifier = 'Milos Teodosic',
         $feature_values = array(
