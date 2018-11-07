@@ -18,7 +18,10 @@ Assume we need an young player. So what is a aproximately good age for being you
 where a, b, c and d are numeric parameters, indicating corners of trapezoid-shaped graph. If we take a, b, c and d consecutively 18, 24, 26, 35 we would get graph like that: 
 ![](https://lh3.googleusercontent.com/M07hoNA4Dorj5B4TLCI6pOj8eyLEYjgtHEWrabqr3RvCBx1v759VhbA4u1203Waff2kO3PeYznEZSUfY6MwkdOQnm5-b4vc5ZPRBp_PfBuwSR08G5M8RPnKSwfwkV0CCM4AwDmfK0wUfGhXhvfozSkJ0RL9itiEVAhbucSqH4VfTD7ZX-hAtd71LLNk1vgKuoEnuMKyUJZxgG4QoIUunlw0fCEA_24LCmnrqf1X71jJNQsH2bSsSqbZsCNNZ_JompwR5Zs4V940Ef8SYuULonXGJhK_8LDIcRAtbV1PBoH7xl2C51CV9at_bokKO3D9uoc81Z2GkCeHYj-Re0P9978IU8jmncrTqwpNWv2RRvNytGyrV22hCaUzjMbN-rMkbONLa-AA56d4Qk184WmePmDuepFaL35_SjaJRyvb_0_M2g_oinTw-mMjg92J0SVKlJ_XYrHJJKJa6DIM7OdYbRthkuTKCJWarFEehHg2oPmUHmv4jb8qKmXV0-blXH61bgYJJGIfBRP6nUwBj1VWcTi3PPLnZV0hmPRPKKL0YmhSG1kjH62N3_LSh7b7kXMqmYTY0aiS7CYP79gSLKAZlzEGFqg9j_b0AuNjLh-4=w640-h480-no)
 
-it means that ideal option for us is age between [24, 26] where function returns 1. Also return value decreasing  when argument approaches to 18 and 35 as shown on graph. It means that you don't need 18 year old player who doesn't have any experience, also you don't need older than 35, it is too old for your team. For example this function estimates 30 old player as 0.55
+
+it means that ideal option for us is age between [24, 26] where function returns 1. Also return value decreasing  when argument approaches to 18 and 35 as shown on graph. It means that you don't need 18 year old player who doesn't have any experience, also you don't need older than 35, it is too old for your team. For example this function estimates 30 years old player as 0.55
+
+
 
 ![](https://latex.codecogs.com/gif.latex?%5Clarge%20f%2830%3B%2018%2C%2024%2C%2026%2C%2035%29%20%3D%200.55)
 
@@ -105,6 +108,8 @@ So aggregated evaluation of **JJ Barea** would be:
 and full table of evaluations looks like that: 
 
 ![](https://lh3.googleusercontent.com/OpOYfYWuhAxOBIjCPavdXWkPcGF5eGO3LE6RN1SmoMXkR2VhMTD6JTTQhmOnwGMwXa3oHjb0YmWMslbv3xsO3QkSr4tmNHbS4b7Traj__OYTlZLnDb_Owdfc6GT_5sZACe0P_OHGXEtTPOt3DKM4nfXdbwHlwbc-0uAiDc5ax8pDpH9PO4cO6X4AGtvnrLsCaJNGnJJ63ZAHI22ieEXI4fBgh8jn5B_xNP8DrgcI4cdpuVoBmHQrSjBZ4tUAbkCUn2IqkATC-AEaiFsXwAkeBz_HFZNe9TGrUYF_5MCI1GBPwZYBWe7hhG_jbG2bjBTV71CZP5D3O_BPR8q7K_xkrVw0RTkaPlxvIBpU5r0Dyiwi8W_VW2MjBZCoFUY1gyMJCdez8SFNwkBaCLqiO9rDMG_VONh2CuDX-FEcaxUap4dzVMlDEZrd8YeMpeWOfWC2QYdTgkteGhU4Mx3e4fcU1ux5ZPtYhgQ0K5jW61MzVw57VG09RPjyOVtGII77YtkzHC7v6IevYfzx7vEJqN-Z4zgeZAhRP6W79Rah4rRVwNhSFBP0ZQ6migxoSsGm4Xmkm-jhnqpAb56jGeUzz527fG4FoCP8P4TvYbNrr84=w263-h418-no)
+
+## Implementation
 
 
 ## Feedbacks and Pull Requests
