@@ -24,11 +24,7 @@ it means that ideal option for us is age between [24, 26] where function returns
 
 
 
-it means that ideal option for us is age between [24, 26] where function returns 1. Also return value decreasing  when argument approaches to 18 and 35 as shown on graph. It means that you don't need 18 year old player who doesn't have any experience, also you don't need older than 35, it is too old for your team. For example this function estimates 30 years old player as 0.55
 
-
-
-![](https://latex.codecogs.com/gif.latex?%5Clarge%20f%2830%3B%2018%2C%2024%2C%2026%2C%2035%29%20%3D%200.55)
 
 
 **2.Years in NBA**
