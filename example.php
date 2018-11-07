@@ -65,8 +65,6 @@ $arr = array($age->call_membership_function(31),
     $threePointPercentage->call_membership_function(37.9));
 
 
-echo array_sum($arr)/count($arr);
-
 //guards
 
 $guards = array(
@@ -124,7 +122,14 @@ $analyzer = new Analyzer($features, $guards, $aggregateFunction);
 
 $analyzer->analyze();
 
-echo json_encode($analyzer->sort());
+$sorted = $analyzer->sort();
+
+
+foreach ($sorted as $item)
+{
+    echo $item->item_identifier." - ".$item->score."\n";
+}
+
 
 
 
