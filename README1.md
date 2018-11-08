@@ -119,7 +119,7 @@ Any kind of pull requests will be acceptable.
 
 **note:**  _There are few amount of membership and aggregate functions and I think most desirable pull requests would be about them_
 
-# C# version of this Repo:
+# C# version:
 
 [https://github.com/goodot/fuzzy-decision-maker](https://github.com/goodot/fuzzy-decision-maker)
 
