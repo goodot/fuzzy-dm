@@ -83,7 +83,7 @@ We should take same type of function here but with different parameters:
 
 
 
-## Aggregation
+# Aggregation
 
 Lets calculate values of membership functions for example for **JJ Barea**:
 
