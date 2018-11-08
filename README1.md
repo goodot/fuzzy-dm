@@ -9,7 +9,7 @@ This repo is a small PHP library to make multi criteria decisions. It is depende
  ## Example
  
 Let's imagine that we have following list of guards with their characteristics:
-![]({img/guards.png)
+![](img/guards.png)
 
 **1. Age**
 
