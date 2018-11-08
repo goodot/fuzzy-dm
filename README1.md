@@ -224,11 +224,13 @@ echo output:
 
 _OUTPUT:_
 
-> Ricky Rubio - 0.81053827254808
-Alexey Shved - 0.64329716740423
-Isaiah Thomas - 0.6348679237777
-JJ Barea - 0.61473949827608
-Milos Teodosic - 0.61293158548061
+    
+    Ricky Rubio - 0.81053827254808
+    Alexey Shved - 0.64329716740423
+    Isaiah Thomas - 0.6348679237777
+    JJ Barea - 0.61473949827608
+    Milos Teodosic - 0.61293158548061
+
 
 
 # Feedbacks and Pull Requests
