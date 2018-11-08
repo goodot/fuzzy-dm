@@ -112,6 +112,124 @@ and full table of evaluations looks like that:
 
 # Implementation
 
+First of all lets declare features of basketball player:
+
+    $age = new Feature('age', new Trapmf(18, 24, 26, 35));
+    $nbaYears = new Feature('nba_years', new Trimf(0, 5, 13));
+    $cost = new Feature('cost', new Trimf(0, 13, 20));
+    $height = new Feature('height', new Trimf(160, 188, 205));
+
+this library already contains implementations of _triangular_ and _trapezoid_ membership functions so this classes are used in this code. But as we described above we have two custom functions with horizontal asymptotes for _APG_ and _3P%_. So we can create our custom membership functions, by just implementing _MembershipFunction_ interface:
+
+    class Assists implements MembershipFunction
+    {
+        function call($x)
+        {
+            $x = (float)$x;
+
+            return ($x - 1) / ($x - 0.2);
+
+        }
+    }
+
+    class TPP implements MembershipFunction
+    {
+    
+        function call($x)
+        {
+            $x = (float)$x;
+    
+            return ($x - 20) / ($x - 19);
+        }
+    }
+
+and declare relevant features too:
+
+    $assistsPerGame = new Feature('apg', new Assists());
+    $threePointPercentage = new Feature('3pp', new TPP());
+    
+make array of features:
+
+    $features = array(
+        $age,
+        $nbaYears,
+        $cost,
+        $height,
+        $assistsPerGame,
+        $threePointPercentage
+    );
+ 
+array of guards:
+
+    $guards = array(
+        new Item($identifier = 'Milos Teodosic',
+            $feature_values = array(
+                'age' => 31,
+                'height' => 196,
+                '3pp' => 37.9,
+                'apg' => 4.6,
+                'nba_years' => 0,
+                'cost' => 12.2
+            )),
+        new Item($identifier = 'Isaiah Thomas',
+            $feature_values = array(
+                'age' => 29,
+                'height' => 175,
+                '3pp' => 36.1,
+                'apg' => 5.1,
+                'nba_years' => 4,
+                'cost' => 19.8
+            )),
+        new Item($identifier = 'JJ Barea',
+            $feature_values = array(
+                'age' => 33,
+                'height' => 182,
+                '3pp' => 35.4,
+                'apg' => 3.9,
+                'nba_years' => 11,
+                'cost' => 9.2
+            )),
+        new Item($identifier = 'Ricky Rubio',
+            $feature_values = array(
+                'age' => 27,
+                'height' => 193,
+                '3pp' => 32.5,
+                'apg' => 7.9,
+                'nba_years' => 6,
+                'cost' => 16
+            )),
+        new Item($identifier = 'Alexey Shved',
+            $feature_values = array(
+                'age' => 29,
+                'height' => 198,
+                '3pp' => 30.6,
+                'apg' => 2.5,
+                'nba_years' => 3,
+                'cost' => 8
+            ))
+    );
+
+and analyze this data:
+
+    $analyzer = new Analyzer($features, $guards, new ArithmeticMean());
+    $analyzer->analyze();
+    $sorted = $analyzer->sort();
+
+echo output:
+
+    foreach ($sorted as $item)
+    {
+        echo $item->item_identifier." - ".$item->score."\n";
+    }
+
+_OUTPUT:_
+
+> Ricky Rubio - 0.81053827254808
+Alexey Shved - 0.64329716740423
+Isaiah Thomas - 0.6348679237777
+JJ Barea - 0.61473949827608
+Milos Teodosic - 0.61293158548061
+
 
 # Feedbacks and Pull Requests
 
