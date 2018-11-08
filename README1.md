@@ -13,7 +13,7 @@ Let's imagine that we have following list of guards with their characteristics:
 
 **1. Age**
 
-You said you need an young player doesn't you? So what is a aproximately good age for being young and also experienced a little bit? I think 24, 25 or 26... or some age nearer those numbers. Let's make membership function to express your requirement. Would be better if we use trapezoid membership function which actually looks like: ![]({{site.baseurl}}/img/agef.png)
+You said you need an young player doesn't you? So what is a aproximately good age for being young and also experienced a little bit? I think 24, 25 or 26... or some age nearer those numbers. Let's make membership function to express your requirement. Would be better if we use trapezoid membership function which actually looks like: ![](img/agef.png)
 
 where a, b, c and d are numeric parameters, indicating corners of trapezoid-shaped graph. If we take a, b, c and d consecutively 18, 24, 26, 35 we would get graph like that: 
 ![]({{site.baseurl}}/img/age.png)
@@ -29,11 +29,11 @@ it means that ideal option for us is age between [24, 26] where function returns
 
 **2.Years in NBA**
 
-Here we use _triangular membership function_ ![]({{site.baseurl}}/img/years.png)
+Here we use _triangular membership function_ ![](img/years.png)
 
 where a, b and c are numeric params indicating corners of triangle-shaped graph: 
 
-![]({{site.baseurl}}/img/nba_years.png)
+![](img/nba_years.png)
 
 
 in this graph **a = 0, b = 5, c = 13** and it means that your favorite option would be player with 5 years of NBA experience.  
@@ -44,7 +44,7 @@ in this graph **a = 0, b = 5, c = 13** and it means that your favorite option wo
 
 You just have 20 million dollars and you want to not waste all your money but also you don't need to buy cheap player, because in trademarket cost means player efficiency. So let's use **triangular function again with parameters a = 0, b = 13 and c = 20**
 
-![]({{site.baseurl}}/img/cost.png)
+![](img/cost.png)
 
 
 
@@ -56,14 +56,14 @@ Of course point guards are not too tall because they should be quick, could move
 
 Lets take **triangular** again, **a = 160, b = 188, c = 205**
 
-![]({{site.baseurl}}/img/height.png)
+![](img/height.png)
 
 
 **5. Assists per game (APG)**
 
 Here we choose some non fundamental, **custom membership function** which has horizontal asymptote on y=1
 
-![]({{site.baseurl}}/img/assists.png)
+![](img/assists.png)
 
 this means that function has value 0 at point x = 1 and it increases monotonously by increasing **x** and never becomes equal to 1 because function has asympote **y = 1**. Here is a formula of this graph:
 
@@ -78,7 +78,7 @@ We should take same type of function here but with different parameters:
 
 
 
-![]({{site.baseurl}}/img/tpp.png)
+![](img/tpp.png)
 
 
 
@@ -108,7 +108,7 @@ So aggregated evaluation of **JJ Barea** would be:
 
 and full table of evaluations looks like that: 
 
-![]({{site.baseurl}}/img/results.png)
+![](img/results.png)
 
 ## Implementation
 
