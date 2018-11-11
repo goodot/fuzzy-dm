@@ -1,38 +1,39 @@
-## Installation
+# Installation
 	composer require ketili/fuzzydm
     
     
-## Introduction
+# Introduction
 
 This repo is a small PHP library to make multi criteria decisions. It is depended on fuzzy-logic fundamentals and uses simple [membership](https://bit.ly/2NLJIrs) and [agregate](https://en.wikipedia.org/wiki/Aggregate_function) functions. Using this library you can make decisions based on some predefined numeric features. For example you are manager of some basketball team and you want to make profitable guard transfer for the team and you have some specific requirements: you have limited transfer budget, have some range of weight, age or height, need maximally experienced and young player as possible. This example will be discussed above alongside with library methods and functions.
 
- ## Example
+ # Example
  
 Let's imagine that we have following list of guards with their characteristics:
-![]({{site.baseurl}}/img/guards.png)
+![](img/guards.png)
 
 **1. Age**
 
-Assume we need an young player. So what is a aproximately good age for being young and also experienced? I think 24, 25 or 26... or some age nearer those numbers. Let's make membership function to express your requirement. Would be better if we use trapezoid membership function which actually looks like: ![]({{site.baseurl}}/img/age.png)
+You said you need an young player doesn't you? So what is a aproximately good age for being young and also experienced a little bit? I think 24, 25 or 26... or some age nearer those numbers. Let's make membership function to express your requirement. Would be better if we use trapezoid membership function which actually looks like: ![](img/agef.png)
 
 where a, b, c and d are numeric parameters, indicating corners of trapezoid-shaped graph. If we take a, b, c and d consecutively 18, 24, 26, 35 we would get graph like that: 
-![](https://lh3.googleusercontent.com/M07hoNA4Dorj5B4TLCI6pOj8eyLEYjgtHEWrabqr3RvCBx1v759VhbA4u1203Waff2kO3PeYznEZSUfY6MwkdOQnm5-b4vc5ZPRBp_PfBuwSR08G5M8RPnKSwfwkV0CCM4AwDmfK0wUfGhXhvfozSkJ0RL9itiEVAhbucSqH4VfTD7ZX-hAtd71LLNk1vgKuoEnuMKyUJZxgG4QoIUunlw0fCEA_24LCmnrqf1X71jJNQsH2bSsSqbZsCNNZ_JompwR5Zs4V940Ef8SYuULonXGJhK_8LDIcRAtbV1PBoH7xl2C51CV9at_bokKO3D9uoc81Z2GkCeHYj-Re0P9978IU8jmncrTqwpNWv2RRvNytGyrV22hCaUzjMbN-rMkbONLa-AA56d4Qk184WmePmDuepFaL35_SjaJRyvb_0_M2g_oinTw-mMjg92J0SVKlJ_XYrHJJKJa6DIM7OdYbRthkuTKCJWarFEehHg2oPmUHmv4jb8qKmXV0-blXH61bgYJJGIfBRP6nUwBj1VWcTi3PPLnZV0hmPRPKKL0YmhSG1kjH62N3_LSh7b7kXMqmYTY0aiS7CYP79gSLKAZlzEGFqg9j_b0AuNjLh-4=w640-h480-no)
+![](img/age.png)
 
-
-it means that ideal option for us is age between [24, 26] where function returns 1. Also return value decreasing  when argument approaches to 18 and 35 as shown on graph. It means that you don't need 18 year old player who doesn't have any experience, also you don't need older than 35, it is too old for your team. For example this function estimates 30 years old player as 0.55
-
-
+it means that ideal option for us is age between [24, 26] where function returns 1. Also return value decreasing  when argument approaches to 18 and 35 as shown on graph. It means that you don't need 18 year old player who doesn't have any experience, also you don't need older than 35, it is too old for your team. For example this function estimates 30 old player as 0.55
 
 ![](https://latex.codecogs.com/gif.latex?%5Clarge%20f%2830%3B%2018%2C%2024%2C%2026%2C%2035%29%20%3D%200.55)
 
 
+
+
+
+
 **2.Years in NBA**
 
-Here we use _triangular membership function_ ![]({{site.baseurl}}/img/years.png)
+Here we use _triangular membership function_ ![](img/years.png)
 
 where a, b and c are numeric params indicating corners of triangle-shaped graph: 
 
-![]({{site.baseurl}}/img/nba_years.png)
+![](img/nba_years.png)
 
 
 in this graph **a = 0, b = 5, c = 13** and it means that your favorite option would be player with 5 years of NBA experience.  
@@ -43,7 +44,7 @@ in this graph **a = 0, b = 5, c = 13** and it means that your favorite option wo
 
 You just have 20 million dollars and you want to not waste all your money but also you don't need to buy cheap player, because in trademarket cost means player efficiency. So let's use **triangular function again with parameters a = 0, b = 13 and c = 20**
 
-![]({{site.baseurl}}/img/cost.png)
+![](img/cost.png)
 
 
 
@@ -55,14 +56,14 @@ Of course point guards are not too tall because they should be quick, could move
 
 Lets take **triangular** again, **a = 160, b = 188, c = 205**
 
-![]({{site.baseurl}}/img/height.png)
+![](img/height.png)
 
 
 **5. Assists per game (APG)**
 
 Here we choose some non fundamental, **custom membership function** which has horizontal asymptote on y=1
 
-![]({{site.baseurl}}/img/assists.png)
+![](img/assists.png)
 
 this means that function has value 0 at point x = 1 and it increases monotonously by increasing **x** and never becomes equal to 1 because function has asympote **y = 1**. Here is a formula of this graph:
 
@@ -77,7 +78,7 @@ We should take same type of function here but with different parameters:
 
 
 
-![]({{site.baseurl}}/img/tpp.png)
+![](img/tpp.png)
 
 
 
@@ -107,18 +108,138 @@ So aggregated evaluation of **JJ Barea** would be:
 
 and full table of evaluations looks like that: 
 
-![]({{site.baseurl}}/img/results.png)
+![](img/results.png)
 
-## Implementation
+# Implementation
+
+First of all lets declare features of basketball player:
+
+    $age = new Feature('age', new Trapmf(18, 24, 26, 35));
+    $nbaYears = new Feature('nba_years', new Trimf(0, 5, 13));
+    $cost = new Feature('cost', new Trimf(0, 13, 20));
+    $height = new Feature('height', new Trimf(160, 188, 205));
+
+this library already contains implementations of _triangular_ and _trapezoid_ membership functions so this classes are used in this code. But as we described above we have two custom functions with horizontal asymptotes for _APG_ and _3P%_. So we can create our custom membership functions, by just implementing _MembershipFunction_ interface:
+
+    class Assists implements MembershipFunction
+    {
+        function call($x)
+        {
+            $x = (float)$x;
+
+            return ($x - 1) / ($x - 0.2);
+
+        }
+    }
+
+    class TPP implements MembershipFunction
+    {
+    
+        function call($x)
+        {
+            $x = (float)$x;
+    
+            return ($x - 20) / ($x - 19);
+        }
+    }
+
+and declare relevant features too:
+
+    $assistsPerGame = new Feature('apg', new Assists());
+    $threePointPercentage = new Feature('3pp', new TPP());
+    
+make array of features:
+
+    $features = array(
+        $age,
+        $nbaYears,
+        $cost,
+        $height,
+        $assistsPerGame,
+        $threePointPercentage
+    );
+ 
+array of guards:
+
+    $guards = array(
+        new Item($identifier = 'Milos Teodosic',
+            $feature_values = array(
+                'age' => 31,
+                'height' => 196,
+                '3pp' => 37.9,
+                'apg' => 4.6,
+                'nba_years' => 0,
+                'cost' => 12.2
+            )),
+        new Item($identifier = 'Isaiah Thomas',
+            $feature_values = array(
+                'age' => 29,
+                'height' => 175,
+                '3pp' => 36.1,
+                'apg' => 5.1,
+                'nba_years' => 4,
+                'cost' => 19.8
+            )),
+        new Item($identifier = 'JJ Barea',
+            $feature_values = array(
+                'age' => 33,
+                'height' => 182,
+                '3pp' => 35.4,
+                'apg' => 3.9,
+                'nba_years' => 11,
+                'cost' => 9.2
+            )),
+        new Item($identifier = 'Ricky Rubio',
+            $feature_values = array(
+                'age' => 27,
+                'height' => 193,
+                '3pp' => 32.5,
+                'apg' => 7.9,
+                'nba_years' => 6,
+                'cost' => 16
+            )),
+        new Item($identifier = 'Alexey Shved',
+            $feature_values = array(
+                'age' => 29,
+                'height' => 198,
+                '3pp' => 30.6,
+                'apg' => 2.5,
+                'nba_years' => 3,
+                'cost' => 8
+            ))
+    );
+
+and analyze this data:
+
+    $analyzer = new Analyzer($features, $guards, new ArithmeticMean());
+    $analyzer->analyze();
+    $sorted = $analyzer->sort();
+
+echo output:
+
+    foreach ($sorted as $item)
+    {
+        echo $item->item_identifier." - ".$item->score."\n";
+    }
+
+_OUTPUT:_
+
+    
+    Ricky Rubio - 0.81053827254808
+    Alexey Shved - 0.64329716740423
+    Isaiah Thomas - 0.6348679237777
+    JJ Barea - 0.61473949827608
+    Milos Teodosic - 0.61293158548061
 
 
-## Feedbacks and Pull Requests
+
+# Feedbacks and Pull Requests
 
 Any kind of pull requests will be acceptable. 
 
 **note:**  _There are few amount of membership and aggregate functions and I think most desirable pull requests would be about them_
 
-## C# version of this Repo:
+# C# version:
 
 [https://github.com/goodot/fuzzy-decision-maker](https://github.com/goodot/fuzzy-decision-maker)
 
