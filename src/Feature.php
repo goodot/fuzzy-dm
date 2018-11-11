@@ -10,7 +10,7 @@ class Feature
     public $weight = 1;
 
 
-    function __construct($identifier, $mem_function)
+    function __construct($identifier, $mem_function, $weight = 1)
     {
         if ($mem_function instanceof MembershipFunction) {
             $this->identifier = $identifier;
@@ -20,6 +20,7 @@ class Feature
         }
 
     }
+
 
     public function set_weight($weight)
     {

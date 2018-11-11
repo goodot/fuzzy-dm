@@ -12,11 +12,11 @@ class Mean{
 
         return $sum / $count;
     }
-    static function geo_average($array)
+    static function geo_average($array, $weights)
     {
-        $count = count($array);
+        $powArg = 1/array_sum($weights);
         $product = array_product($array);
-        return $product / $count;
+        return pow($product, $powArg);
     }
     static function harmonic_average($array)
     {
