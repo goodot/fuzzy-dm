@@ -231,6 +231,27 @@ _OUTPUT:_
     JJ Barea - 0.61473949827608
     Milos Teodosic - 0.61293158548061
 
+## Priorities... Weights...
+
+It is so expectable that we may don't want that all our features had the same importance. For example you may need player just for one season and player's age is not considerable, but not too insignificant. So we can set weights between [0,1] to our features. Lets do it and check out how output changes after setting **weights**;
+
+
+    $age->set_weight(0.4);
+    $nbaYears->set_weight(0.2);
+    $height->set_weight(0.8);
+    $cost->set_weight(1);
+    $assistsPerGame->set_weight(0.71);
+    $threePointPercentage->set_weight(0.77);
+
+and we are getting: 
+
+	Ricky Rubio - 0.78430304749612
+	Milos Teodosic - 0.68180312874937
+	JJ Barea - 0.67695882586768
+	Alexey Shved - 0.64070029059168
+	Isaiah Thomas - 0.58441672648242
+
+it seems that Ricky Rubio is uncompetitively good for us according to our requirements and priorities, but after setting priorities, changed sequence after Rubio, Milos Teodosic became second most desirable player after Rubio.
 
 
 # Feedbacks and Pull Requests
