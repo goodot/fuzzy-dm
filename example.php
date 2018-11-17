@@ -1,5 +1,6 @@
 <?php
 use ketili\aggregation\ArithmeticMean;
+use ketili\aggregation\WeightedArithmeticMean;
 use ketili\Analyzer;
 use ketili\Feature;
 use ketili\Item;
@@ -124,8 +125,24 @@ foreach ($sorted as $item) {
 
 /* with weights (priorities) */
 
+    $age->set_weight(0.4);
+    $nbaYears->set_weight(0.5);
+    $height->set_weight(0.8);
+    $cost->set_weight(1);
+    $assistsPerGame->set_weight(0.71);
+    $threePointPercentage->set_weight(0.77);
 
 
+$analyzer = new Analyzer($features, $guards, new WeightedArithmeticMean());
+$analyzer->analyze();
+$sorted = $analyzer->sort();
+
+
+echo "WITH WEIGHTS: \n";
+
+foreach ($sorted as $item) {
+    echo $item->item_identifier . " - " . $item->score . "\n";
+}
 
 
 
