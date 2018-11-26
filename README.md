@@ -245,6 +245,10 @@ It is so expectable that we may don't want that all our features had the same im
     $cost->set_weight(1);
     $assistsPerGame->set_weight(0.71);
     $threePointPercentage->set_weight(0.77);
+    
+    $analyzer = new Analyzer($features, $guards, new WeightedArithmeticMean());
+	$analyzer->analyze();
+	$sorted = $analyzer->sort();
 
 and we are getting: 
 
