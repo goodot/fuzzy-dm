@@ -15,7 +15,7 @@
     "autoload":{
         "classmap": ["src"],
         "psr-4": {
-            "ketili": "src",
+            "ketili\\": "src",
             "ketili\\aggregation\\": "src/aggregation",
             "ketili\\membership\\": "src/membership",
             "ketili\\membership\\polygon\\": "src/membership/polygon",
