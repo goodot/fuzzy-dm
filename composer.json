@@ -13,7 +13,14 @@
         "php": ">=5.3.0"
     },
     "autoload":{
-        "classmap": ["src"]
+        "classmap": ["src"],
+        "psr-4": {
+            "ketili": "src",
+            "ketili\\aggregation\\": "src/aggregation",
+            "ketili\\membership\\": "src/membership",
+            "ketili\\membership\\polygon\\": "src/membership/polygon",
+            "ketili\\membership\\sigmoid\\": "src/membership/sigmoid"
+        }
     },
     "license":[
         "Apache-2.0"

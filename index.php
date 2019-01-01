@@ -3,6 +3,7 @@
 include 'autoload.php';
 
 use ketili\Analyzer;
+use ketili\Feature;
 use ketili\Item;
 
 
@@ -12,9 +13,9 @@ use ketili\Item;
 
 
 $aggregationFunction = new \ketili\aggregation\WeightedArithmeticMean();
-$height = new \ketili\Feature($identifier="Height", new \ketili\membership\polygon\Trimf(160, 190, 203));
-$age = new \ketili\Feature("Age", new \ketili\membership\sigmoid\SNonLinear(10, 30));
-$seasons = new \ketili\Feature("Seasons", new \ketili\membership\polygon\Trimf(0, 5, 20));
+$height = new Feature($identifier="Height", new \ketili\membership\polygon\Trimf(160, 190, 203));
+$age = new Feature("Age", new \ketili\membership\sigmoid\SNonLinear(10, 30));
+$seasons = new Feature("Seasons", new \ketili\membership\polygon\Trimf(0, 5, 20));
 
 
 $features = array($height, $age, $seasons);

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="ketili" />
+      <sourceFolder url="file://$MODULE_DIR$/src/membership" isTestSource="false" packagePrefix="ketili\membership\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/aggregation" isTestSource="false" packagePrefix="ketili\aggregation\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/membership/sigmoid" isTestSource="false" packagePrefix="ketili\membership\sigmoid\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/membership/polygon" isTestSource="false" packagePrefix="ketili\membership\polygon\" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
