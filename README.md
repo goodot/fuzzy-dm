@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/3309be8455db13cbce7d/maintainability)](https://codeclimate.com/github/goodot/fuzzy-dm/maintainability)
+
 # Installation
 	composer require ketili/fuzzydm
     
