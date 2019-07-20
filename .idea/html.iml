@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/aggregation" isTestSource="false" packagePrefix="ketili\aggregation\" />
       <sourceFolder url="file://$MODULE_DIR$/src/membership/sigmoid" isTestSource="false" packagePrefix="ketili\membership\sigmoid\" />
       <sourceFolder url="file://$MODULE_DIR$/src/membership/polygon" isTestSource="false" packagePrefix="ketili\membership\polygon\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

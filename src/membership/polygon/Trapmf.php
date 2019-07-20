@@ -11,7 +11,6 @@ namespace ketili\membership\polygon;
 use ketili\membership\MembershipFunction;
 
 
-//TODO test
 class Trapmf implements MembershipFunction
 {
     public $a, $b, $c, $d;
